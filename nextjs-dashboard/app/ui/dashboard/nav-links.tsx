@@ -5,15 +5,39 @@ import {
 } from '@heroicons/react/24/outline';
 
 // Map of links to display in the side navigation.
+import Link from 'next/link';
 // Depending on the size of the application, this would be stored in a database.
 const links = [
-  { name: 'Home', href: '/dashboard', icon: HomeIcon },
+  { 
+    name: 'Home', 
+    href: '/dashboard', 
+    icon: HomeIcon 
+  },
   {
     name: 'Invoices',
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  { 
+    name: 'Customers', 
+    href: '/dashboard/customers', 
+    icon: UserGroupIcon 
+  },
+  {
+    name: 'About Us',
+    href: '/dashboard/about_us',
+    icon: HomeIcon, // Placeholder icon, replace with an appropriate one
+  },
+  {
+    name: 'Services',
+    href: '/dashboard/services',
+    icon: HomeIcon, // Placeholder icon, replace with an appropriate one
+  },
+  {
+    name: 'Portfolio',
+    href: '/dashboard/portfolio',
+    icon: HomeIcon, // Placeholder icon, replace with an appropriate one
+  }
 ];
 
 export default function NavLinks() {
@@ -22,14 +46,14 @@ export default function NavLinks() {
       {links.map((link) => {
         const LinkIcon = link.icon;
         return (
-          <a
+          <Link
             key={link.name}
             href={link.href}
             className="flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
           >
             <LinkIcon className="w-6" />
             <p className="hidden md:block">{link.name}</p>
-          </a>
+          </Link>
         );
       })}
     </>

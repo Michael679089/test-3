@@ -6,8 +6,7 @@ export default function MichaelLogo() {
     <div
       className={`${inter.className} flex flex-row items-center gap-2 leading-none text-blue-600`}
     >
-      <SparklesIcon className="h-10 w-10 text-yellow-400 drop-shadow-md" />
-      <span className="text-[40px] font-extrabold tracking-tight">Michael</span>
+      <p className="text-white text-[40px] font-extrabold tracking-tight">Michael 👀</p> 
     </div>
   );
 }
